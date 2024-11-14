@@ -259,7 +259,7 @@ class ReverseTypedRelationReferences extends ProcessorPluginBase {
         ];
         $property = new EntityProcessorProperty($definition);
         $property->setEntityTypeId($entity_type_id);
-        $properties["search_api_reverse_entity_references_$key"] = $property;
+        $properties["search_api_reverse_typedrelation_references_$key"] = $property;
       }
     }
 
@@ -287,7 +287,7 @@ class ReverseTypedRelationReferences extends ProcessorPluginBase {
 
     /** @var \Drupal\search_api\Item\FieldInterface[][][] $to_extract */
     $to_extract = [];
-    $prefix = 'search_api_reverse_entity_references_';
+    $prefix = 'search_api_reverse_typedrelation_references_';
     $prefix_length = strlen($prefix);
     foreach ($item->getFields() as $field) {
       $property_path = $field->getPropertyPath();
@@ -361,7 +361,7 @@ class ReverseTypedRelationReferences extends ProcessorPluginBase {
     // Property labels differ by language, so we need to vary the cache
     // according to the current language.
     $langcode = $this->getLanguageManager()->getCurrentLanguage()->getId();
-    $cid = "search_api:reverse_entity_references:$langcode";
+    $cid = "search_api:reverse_typedrelation_references:$langcode";
     $cache = $this->getCache()->get($cid);
     if (isset($cache->data)) {
       $this->references = $cache->data;
