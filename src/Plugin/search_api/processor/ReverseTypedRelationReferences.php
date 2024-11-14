@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\search_api\Plugin\search_api\processor;
+namespace Drupal\controlled_access_terms\Plugin\search_api\processor;
 
 use Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException;
 use Drupal\Component\Plugin\Exception\PluginNotFoundException;
